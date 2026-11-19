@@ -1,0 +1,30 @@
+# Datasets arguments
+
+dresden_dir: #"./datasets/tensors/dresden_tensors"
+hemoset_dir: null
+cholec_dir:  "./datasets/tensors/cholecseg8k_tensors"
+
+num_classes: 13 #8
+
+# Model arguments
+
+selected_model: "SSTC-Seg"  # ["SSTC-Seg", "U-Net", "CFPNet-M", "MFCPNet", "PSPNet"]
+model_dir: "./model/weights/best_model_checkpoint.pth"
+#model_dir: null
+
+num_encoder_blocks: 3
+num_heads: 8
+k: 5
+memory_length: 5
+num_memory_blocks: 3
+deformable: true
+use_crf: true
+
+# Training / Testing arguments
+
+augmentation: false
+batch_size: 2
+epochs: 1000
+lr: 0.0001
+patience: 6
+device: "cuda"
